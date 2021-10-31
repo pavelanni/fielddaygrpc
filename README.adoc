@@ -1,0 +1,4 @@
+= Field Day gRPC implementation
+
+This repository is another use for the Field Day application. 
+I use it now to learn about gRPC with Go.
