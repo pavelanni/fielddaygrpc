@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+import "google/protobuf/empty.proto";
+
+option go_package = "fielddaygrpc/fieldday";
+
+package fieldday;
+
+service FieldDay {
+    rpc addVisitor(Visitor) returns (TotalNum);
+    rpc getTotal(google.protobuf.Empty) returns (TotalNum);
+    rpc listVisitors(google.protobuf.Empty) returns (stream Visitor);
+}
+
+message Visitor {
+    string First = 1;
+    string Last = 2;
+    string Callsign = 3;
+    bool Youth = 4;
+    bool NFARL = 5;
+}
+
+message TotalNum {
+    int32 Number = 1;
+}
